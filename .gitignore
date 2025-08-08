@@ -1,1 +1,5 @@
 __pycache__
+expense_tracker/__pycache__
+mirrored/__pycache__
+**.pyc
+*.pyo
