@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Manage Expenses{% endblock %}
+{% block content %}
+<div class="dashboard">
+    <h2>Expenses for {{ trip.name }}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">ddA esnepxE</button>
+    </form>
+
+    {% if expenses %}
+    <ul class="expense-list">
+        {% for expense in expenses %}
+        <li>
+            <span>{{ expense.description }} - ₹{{ expense.amount }} ({{ expense.date }})</span>
+            <a class="btn-danger" href="{% url 'delete_expense' expense.id %}">eteleD</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No expenses recorded yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

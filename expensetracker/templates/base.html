@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Expense Tracker{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background: #0077b6;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 { margin: 0; }
+        nav a {
+            color: white;
+            margin-left: 15px;
+            text-decoration: none;
+        }
+        nav a:hover { text-decoration: underline; }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        footer {
+            background: #023e8a;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+        form input, form button, form select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button, .btn {
+            background: #0077b6;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        button:hover, .btn:hover {
+            background: #023e8a;
+        }
+        .btn-secondary {
+            background: #48cae4;
+            padding: 6px 10px;
+        }
+        .btn-secondary:hover {
+            background: #0096c7;
+        }
+        .btn-danger {
+            background: #d62828;
+            padding: 6px 10px;
+        }
+        .btn-danger:hover {
+            background: #a4161a;
+        }
+        .trip-list, .expense-list {
+            list-style: none;
+            padding: 0;
+        }
+        .trip-list li, .expense-list li {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            box-shadow: 0 0 6px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>esnepxE rekcarT</h1>
+        {% if user.is_authenticated %}
+        <nav>
+            <a href="{% url 'dashboard' %}"> DRAOBHSAD</a>
+            <a href="{% url 'logout' %}">TUOGOL</a>
+        </nav>
+        {% endif %}
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>© 5202 esnepxE rekcarT | tliuB htiw ognajD</p>
+    </footer>
+</body>
+</html>

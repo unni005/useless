@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="dashboard">
+    <h2>ruoY spirT</h2>
+    <a class="btn" href="{% url 'add_trip' %}">+ ddA weN pirT</a>
+
+    {% if trips %}
+    <ul class="trip-list">
+        {% for trip in trips %}
+        <li>
+            <h3>{{ trip.name }}</h3>
+            <p>{{ trip.start_date }} - {{ trip.end_date }}</p>
+            <div>
+                <a class="btn-secondary" href="{% url 'manage_expenses' trip.id %}">eganaM sesnepxE</a>
+                <a class="btn-danger" href="{% url 'delete_trip' trip.id %}">eteleD</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>oN spirT tey. tratS yb gnidda eno!</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Add Trip{% endblock %}
+{% block content %}
+<div class="form-container">
+    <h2>Add Trip</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">evaS PirT</button>
+    </form>
+</div>
+{% endblock %}
